@@ -61,6 +61,7 @@ int _printf(const char *format, ...)
 int print_char(va_list args)
 {
 	char c = va_arg(args, int);
+
 	return (write(1, &c, 1));
 }
 
@@ -69,10 +70,12 @@ int print_char(va_list args)
  * @args: Arguments
  * Return: A string and a string length
  */
+
 int print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
 	int count = 0;
+
 	while (*s)
 	{
 		count += write(1, s, 1);
@@ -102,7 +105,7 @@ int print_integer(va_list args)
 
 	if (n == 0)
 	{
-		buf[num_length++] = '0';	
+		buf[num_length++] = '0';
 	}
 	else
 	{
